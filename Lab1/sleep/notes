@@ -1,0 +1,46 @@
+Lab1
+
+1.1 Sleep
+
+1. How to obtain command-line args passed to the program
+
+	int main(int argc, char *argv[])
+	
+argc is arg count which counts the number of args passed to the program in cammand line and is usually 1 because on invoking a program you have already enter the name of the program which is also taken into acount by argc.
+
+argv[] is a pointer array which points to each arg passed to the program.
+
+With argc and argv[] set in the src code as formal arguments to the mian function, you can pass args to the main function in the command line in such pattern:
+
+	progName [arg1] [arg2] [arg3] ...
+
+with each arg separated from each other by a space.
+
+
+2. In Sleep, if the user forgets to pass an argument, we should print an error.
+
+This is done by checking the argc count. 
+
+	namely, if argc is 1, print error
+
+3. How to use atoi implemented in user/ulib.c
+
+	#include "user/user.h"
+	
+	user.h file contains the prototypes of all syscall functions such as sleep, kill, and wait as well as all functions defined in ulib.c such as atoi and strlen.
+
+4. How to use the syscall sleep
+
+To be completed :
+	
+	1. kernel/proc.c: definition of sleep
+	2. kernel/proc.h: .h for proc.c
+	3. kernel/sysproc.c: wapper of sleep
+	4. user/user.h for the C definition of sleep callable from a user program
+	5. user/usys.S for the assembler code that jumps from user code into the kernel for sleep
+	6. kernel/syscall.h
+	7. kernel/syscall.c
+	
+	Note to myself: syscall.c, syscall.h, usys.S are to be studied together cuz they are somewhat related by some macros.
+
+5. Code see sleep.c
